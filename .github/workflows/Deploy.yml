@@ -13,6 +13,11 @@ jobs:
 
     steps:
 
-    - name: echo
-      run: echo "test"
+    - name: prepare connexion
+      run: which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y ); mkdir -p ~/.ssh; eval $(ssh-agent -s); apt-get update -qq && apt-get install -y -qq sshpass; export SSHPASS=$AddressServerWebSSHPwd
+      
+    - name: create database
+      run: sshpass -e ssh -p 22 $AddressServerWebSSH 'mysql -h berginfrofemile.mysql.db -u berginfrofemile --password=SurfacePro4 < www/web-jjb/BD/bd-create.sql '
+      
+      
 

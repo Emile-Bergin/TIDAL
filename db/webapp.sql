@@ -15,10 +15,6 @@ CREATE DATABASE IF NOT EXISTS webapp;
 
 USE webapp;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données : `webapp`
@@ -33,7 +29,10 @@ USE webapp;
 CREATE TABLE `Basket` (
   `customer` int NOT NULL,
   `product` int NOT NULL,
-  `quantity` int NOT NULL
+  `quantity` int NOT NULL,
+  PRIMARY KEY (`customer`,`product`),
+  FOREIGN KEY (`product`) REFERENCES `Products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`customer`) REFERENCES `Customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 --
@@ -52,7 +51,7 @@ INSERT INTO `Basket` (`customer`, `product`, `quantity`) VALUES
 --
 
 CREATE TABLE `Customers` (
-  `id` int NOT NULL,
+  `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `firstname` varchar(20) NOT NULL,
   `familyname` varchar(20) NOT NULL,
   `address` text NOT NULL,
@@ -76,11 +75,12 @@ INSERT INTO `Customers` (`id`, `firstname`, `familyname`, `address`, `username`,
 --
 
 CREATE TABLE `Products` (
-  `id` int NOT NULL,
+  `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(40) NOT NULL,
   `description` text NOT NULL,
   `price` float NOT NULL
 );
+
 --
 -- Déchargement des données de la table `Products`
 --
@@ -92,57 +92,4 @@ INSERT INTO `Products` (`id`, `name`, `description`, `price`) VALUES
 (4, 'Buzzer Alarme 12V', 'ICQUANZX 5 Pcs DC 3-24V 85dB Son Alarme Électronique Buzzer Noir 23 x 12mm', 7.99);
 
 --
--- Index pour les tables déchargées
---
 
---
--- Index pour la table `Basket`
---
-ALTER TABLE `Basket`
-  ADD PRIMARY KEY (`customer`,`product`),
-  ADD KEY `product` (`product`),
-  ADD KEY `customer` (`customer`);
-
---
--- Index pour la table `Customers`
---
-ALTER TABLE `Customers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `Products`
---
-ALTER TABLE `Products`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `Customers`
---
-ALTER TABLE `Customers`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT pour la table `Products`
---
-ALTER TABLE `Products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `Basket`
---
-ALTER TABLE `Basket`
-  ADD CONSTRAINT `Basket_ibfk_1` FOREIGN KEY (`product`) REFERENCES `Products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Basket_ibfk_2` FOREIGN KEY (`customer`) REFERENCES `Customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

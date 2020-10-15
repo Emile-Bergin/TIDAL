@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<img src="../models/img/pipe-icon.png" style="width:50px;height:50px;"></img>
+		<img src="../models/img/pipe-icon.png" alt="Logo pipe" style="width:50px;height:50px;"></img>
 		<h1>La pipe magique</h1>
 		<form action="../controllers/Connexion.php" method="post">
   			<input type="text" id="username" name="username" required>

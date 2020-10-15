@@ -19,13 +19,13 @@
 		<nav>
     		<ol>
       			<li>
-					<p href="./controlleurs/Home.php">Produits</p>
+					<a href="./controlleurs/Home.php">Produits</a>
 				</li>
 				<li>
-					<p href="./controlleurs/Basket">Panier</p>
+					<a href="./controlleurs/Basket">Panier</a>
 				</li>
 				<li>	
-					<p href="./controlleurs/AccountCreation.php">Créer un compte</p>
+					<a href="./controlleurs/AccountCreation.php">Créer un compte</a>
 			    </li>
     		</ol>
   		</nav>

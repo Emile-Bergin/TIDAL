@@ -13,6 +13,11 @@ jobs:
 
     steps:
 
-    - name: check-php
+    - name: ls
       run: ls -l
-
+    - name: pwd
+      run: pwd
+    - name: cd
+      run: cd
+    - name: ls2
+      run: ls

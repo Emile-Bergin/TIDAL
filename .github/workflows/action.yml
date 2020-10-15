@@ -1,0 +1,23 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  deploy-db:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: ls
+      run: ls -l
+    - name: pwd
+      run: pwd
+    - name: cd
+      run: cd
+    - name: ls2
+      run: ls

@@ -9,7 +9,7 @@
 </head>
 <body>
 	<header>
-		<img href="./models/img/logo"></img>
+		<img src="./models/img/logo.jpg" style="width:50px;height:50px;"></img>
 		<p>Shity_dropshipping.com</p>
 		<form action="./controlleurs/Connexion.php" method="post">
   			<input type="text" id="username" name="username" required>

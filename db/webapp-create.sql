@@ -1,24 +1,13 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Hôte : mysql
--- Généré le : mar. 22 sep. 2020 à 11:31
--- Version du serveur :  8.0.21
--- Version de PHP : 7.4.9
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-CREATE DATABASE IF NOT EXISTS webapp;
-
-USE webapp;
-
+--SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+--START TRANSACTION;
+--SET time_zone = "+00:00";
 
 --
 -- Base de données : `webapp`
 --
+CREATE DATABASE IF NOT EXISTS webapp;
+
+USE webapp;
 
 -- --------------------------------------------------------
 
@@ -26,7 +15,7 @@ USE webapp;
 -- Structure de la table `Basket`
 --
 
-CREATE TABLE `Basket` (
+CREATE TABLE IF NOT EXISTS Basket (
   `customer` int NOT NULL,
   `product` int NOT NULL,
   `quantity` int NOT NULL,
@@ -40,20 +29,20 @@ CREATE TABLE `Basket` (
 -- Structure de la table `Customers`
 --
 
-CREATE TABLE `Customers` (
+CREATE TABLE IF NOT EXISTS Customers (
   `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `firstname` varchar(20) NOT NULL,
   `familyname` varchar(20) NOT NULL,
   `address` text NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(128) NOT NULL
+  `username` TEXT NOT NULL,
+  `password` TEXT NOT NULL
 );
 
 --
 -- Structure de la table `Products`
 --
 
-CREATE TABLE `Products` (
+CREATE TABLE IF NOT EXISTS Products (
   `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(40) NOT NULL,
   `description` text NOT NULL,

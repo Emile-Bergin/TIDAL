@@ -1,7 +1,7 @@
 <?php
 //Model
-require_once('models/RessourceController.php');
-
+require_once('../models/RessourceController.php');
+echo "Connexion";
 //Actions
 //DEBUG
 echo $_POST["username"].$_POST["password"]."<br>"; //Affichage username password

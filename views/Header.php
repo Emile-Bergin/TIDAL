@@ -10,10 +10,9 @@
 </head>
 <body>
 	<header>
-		<img src="./models/img/pipe-icon.png" style="width:50px;height:50px;"></img>
+		<img src="../models/img/pipe-icon.png" style="width:50px;height:50px;"></img>
 		<h1>La pipe magique</h1>
-		<p><?=getcwd()?></p>
-		<form action="/controlleurs/Connexion.php" method="post">
+		<form action="../controllers/Connexion.php" method="post">
   			<input type="text" id="username" name="username" required>
  			<input type="password" id="password" name="password" required>
 			<input type="submit" value="Valider">
@@ -21,13 +20,13 @@
 		<nav>
     		<ol>
       			<li>
-					<a href="./controlleurs/Home.php">Produits</a>
+					<a href="../controllers/Products.php">Produits</a>
 				</li>
 				<li>
-					<a href="./controlleurs/Basket">Panier</a>
+					<a href="../controllers/Basket">Panier</a>
 				</li>
 				<li>	
-					<a href="./controlleurs/AccountCreation.php">Créer un compte</a>
+					<a href="../controllers/AccountCreation.php">Créer un compte</a>
 			    </li>
     		</ol>
   		</nav>

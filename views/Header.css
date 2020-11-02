@@ -6,3 +6,36 @@
 #formConnexion{
     margin-top:30px;
 }
+
+.btnMenuNav:hover{
+    width: auto;
+    height: auto;
+    color: grey;
+    background-color: #3a3b3c;
+}
+
+.btnMenuNav{
+    text-decoration: none;
+}
+
+nav,ul{
+    background-color: #18191a;
+    list-style-type: none;
+    display: flex;
+    flex: auto;
+    justify-content: space-around;
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+li:hover{
+    background-color: #3a3b3c;
+}
+
+hr{
+    color: #3a3b3c;
+}

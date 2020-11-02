@@ -42,17 +42,17 @@ var_dump($_SESSION);
 		<nav>
 			<ul style="display:flex;justify-content: space-around;">
       			<li>
-					<a href="../controllers/Products.php">Produits</a>
+					<a class="btnMenuNav" href="../controllers/Products.php">Produits</a>
 				</li>
 		<?php
 		 if(isset($_SESSION)) {
          	if (isset($_SESSION["connecte"])) {
 	         	if ($_SESSION["connecte"] == CONNECT) {
-					echo '<li> <a href="../controllers/Basket.php"><h2 class="textAlignCentre">Panier</h2></a></li>';				
+					echo '<li> <a class="btnMenuNav" href="../controllers/Basket.php"><h2 class="textAlignCentre">Panier</h2></a></li>';
 				}
 			}else{
 				echo'<li>	
-					<a href="../controllers/AccountCreation.php">Créer un compte</a>
+					<a class="btnMenuNav" href="../controllers/AccountCreation.php">Créer un compte</a>
 			    </li>';
 			}
 		}

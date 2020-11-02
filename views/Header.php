@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="icon" href="./models/img/pipe-icon.png" />
-	<title>Titre de la page</title>
+	<title>La pipe magique</title>
 	<!-- <link rel="stylesheet" href="style.css"> -->
 	<!-- <script src="script.js"></script> -->
 </head>
@@ -14,7 +14,7 @@ var_dump($_SESSION);
 <body>
 	<header>
 		<div class="HeaderHaut" style="display:flex;justify-content: space-between;">
-			<img src="../models/img/pipe-icon.png" alt="Logo pipe" style="width:50px;height:50px;margin-top:17px"></img>
+			<img src="../models/img/logo.png" alt="Logo pipe" style="width:50px;height:50px;margin-top:17px"></img>
 			<h1>La pipe magique</h1>
 			<?php
 			function echoConnexion(){

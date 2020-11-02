@@ -5,18 +5,15 @@ require_once('../models/RessourceController.php');
 
 //Actions
 
-if (isset($_SESSION)) {
-    if (isset($_SESSION["connecte"])) {
-        if ($_SESSION["connecte"] == CONNECT) { //si il est connecté
-            echo '';
-        }else{
 
-        }
-    } else {
-        echo '';
-    }
+if ($_SESSION["connecte"] == CONNECT) { //si il est connecté
+    $id=$pdo->getCustomerID($_SESSION["username"]);
+    $pdo->AddToBasket($id, $_POST["articleId"], $_POST["number"]);
+}else{
+    $_SESSION["tmpBasket"]=$_SESSION["tmpBasket"]+"{".$_POST["articleId"].",".$_POST["number"]."},";
 }
 
+header("Location: ../controllers/Products.php");
 
 
 //

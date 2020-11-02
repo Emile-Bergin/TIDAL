@@ -17,6 +17,17 @@ class DataBase{
         $this->_db = $db;
     }
 
+    public function AddToBasket($customer, $product, $quantity){
+        $data = [
+            'customer' => $customer,
+            'product' => $product,
+            'quantity' => $quantity
+        ];
+        $sql = "INSERT INTO Basket VALUES (:customer, :product, :quantity)";
+        $stmt= $this->_db->prepare($sql);
+        $stmt->execute($data);
+    }
+
     public function getProducts(){
         $sth = $this->_db->query("select * from Products");
         $resultat = $sth->fetchAll();

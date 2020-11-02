@@ -91,15 +91,17 @@ class DataBase{
     }
 
     public function getCustomerID($username){
-        $query='SELECT id from Customers where username="'. $username.'"';
+        $query='SELECT id from Customers where username = "'. $username.'"';
         $sth = $this->_db->query($query);
-        $resultat = $sth->fetch();
+        $result= $sth->fetch();
+        return $result["id"];
     }
 
     public function getBasket($id){
         $query='SELECT * from Basket where customer="'. $id.'"';
         $sth = $this->_db->query($query);
-        $resultat = $sth->fetchAll();
+        $result= $sth->fetchAll();
+        return $result;
     }
 
 

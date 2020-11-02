@@ -13,7 +13,4 @@ if ($_SESSION["connecte"] == CONNECT) { //si il est connecté
     $_SESSION["tmpBasket"]=$_SESSION["tmpBasket"]+"{".$_POST["articleId"].",".$_POST["number"]."},";
 }
 
-//header("Location: ../controllers/Products.php");
-
-
-//
+header("Location: ../controllers/Products.php");

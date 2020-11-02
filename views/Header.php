@@ -39,6 +39,7 @@ var_dump($_SESSION);
 			?>
 			
 		</div>
+		<hr>
 		<nav>
 			<ul style="display:flex;justify-content: space-around;">
       			<li>

@@ -9,4 +9,7 @@ require_once ('../models/Functions.php');
 $pdo= new DataBase();
 //session
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+if(!isset($_SESSION["connecte"])){
+    $_SESSION["connecte"] = DISCONNECT;
+}
 ?>

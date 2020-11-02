@@ -45,22 +45,12 @@ var_dump($_SESSION);
       			<li>
 					<a class="btnMenuNav" href="../controllers/Products.php"><h2 class="h2Nav">Produits</h2></a>
 				</li>
-		<?php
-		 if(isset($_SESSION)) {
-         	if (isset($_SESSION["connecte"])) {
-	         	if ($_SESSION["connecte"] == CONNECT) {
-					echo '<li> <a class="btnMenuNav" href="../controllers/Basket.php"><h2 class="h2Nav">Panier</h2></a></li>';
-				}
-			}else{
-				echo'<li>	
-					<a class="btnMenuNav" href="../controllers/AccountCreation.php"><h2 class="h2Nav">Créer un compte</h2></a>
-			    </li>';
-			}
-		}
-		
-		?>
-    		
-				
+                <li>
+                    <a class="btnMenuNav" href="../controllers/Basket.php"><h2 class="h2Nav">Panier</h2></a>
+                </li>
+                <li>
+                    <a class="btnMenuNav" href="../controllers/AccountCreation.php"><h2 class="h2Nav">Créer un compte</h2></a>
+                </li>
     		</ul>
   		</nav>
 	</header>

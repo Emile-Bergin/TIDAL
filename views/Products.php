@@ -7,7 +7,7 @@
 		echo '<h2>'.$product["name"].'</h2>';
 		echo '<p>'.$product["description"].'</p>';
 		echo '<h3>Prix: '.$product["name"].'</h3>';
-		echo '<form action="" method="post">';
+		echo '<form action="../controllers/AddProductToBasket.php" method="post">';
 			echo '<input type="hidden" name="articleId" value="'.$product["id"].'">';
 			echo '<label for="number">Quantité: </label>';
 			echo '<input type="number" name="number" value="1">';

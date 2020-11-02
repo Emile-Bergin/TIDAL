@@ -96,6 +96,12 @@ class DataBase{
         $resultat = $sth->fetch();
     }
 
+    public function getBasket($id){
+        $query='SELECT * from Basket where customer="'. $id.'"';
+        $sth = $this->_db->query($query);
+        $resultat = $sth->fetchAll();
+    }
+
 
 }
 

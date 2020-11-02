@@ -1,9 +1,9 @@
 <h1>Products</h1>
 <hr>
-<div class="products" style="display:flex;">
+<div class="products" style="display:flex;flex-wrap:wrap;">
 <?php
 	foreach($produts as $product){
-		echo '<section style="background:#F0F000;margin:20px;border-radius: 5px;;">';
+		echo '<section style="background:#F0F000;margin:20px;border-radius: 5px;padding:10px;width:400px;">';
 		echo '<h2>'.$product["name"].'</h2>';
 		echo '<p>'.$product["description"].'</p>';
 		echo '<h3>Prix: '.$product["name"].'</h3>';

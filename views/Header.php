@@ -6,7 +6,7 @@
 	<link rel="icon" href="./models/img/pipe-icon.png" />
 	<title>La pipe magique</title>
     <link rel="icon" href="../models/img/pipe-icon.png" />
-	<!-- <link rel="stylesheet" href="style.css"> -->
+	<link rel="stylesheet" href="Header.css">
 	<!-- <script src="script.js"></script> -->
 </head>
 <?php
@@ -15,11 +15,11 @@ var_dump($_SESSION);
 <body>
 	<header>
 		<div class="HeaderHaut" style="display:flex;justify-content: space-between;">
-			<img src="../models/img/logo.png" alt="Logo pipe" style="width:100px;height:100px;"></img>
+			<img id="logo" src="../models/img/logo.png" alt="Logo pipe" ></img>
 			<h1>La pipe magique</h1>
 			<?php
 			function echoConnexion(){
-				echo '<form action="../controllers/Connexion.php" method="post" style="margin-top:30px;">
+				echo '<form id="formConnexion" action="../controllers/Connexion.php" method="post" >
 	  						<input type="text" id="username" name="username" placeholder="identifiant" required>
 				 			<input type="password" id="password" name="password" placeholder="mot de passe" required>
 							<input type="submit" value="Connexion">

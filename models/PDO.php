@@ -89,8 +89,13 @@ class DataBase{
         // $sth->debugDumpParams();
         return $resultat["password"];
     }
-  
-  
+
+    public function getCustomerID($username){
+        $query='SELECT id from Customers where username="'. $username.'"';
+        $sth = $this->_db->query($query);
+        $resultat = $sth->fetch();
+    }
+
 
 }
 

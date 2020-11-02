@@ -3,7 +3,7 @@
 <div class="products" style="display:flex;">
 <?php
 	foreach($produts as $product){
-		echo '<section style="background:#F0F000;margin:20px;border-radius:3px;">';
+		echo '<section style="background:#F0F000;margin:20px;border-radius: 5px;;">';
 		echo '<h2>'.$product["name"].'</h2>';
 		echo '<p>'.$product["description"].'</p>';
 		echo '<h3>Prix: '.$product["name"].'</h3>';

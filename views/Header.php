@@ -46,8 +46,6 @@ var_dump($_SESSION);
                     echo'<li><a class="btnMenuNav" href="../controllers/AccountCreation.php"><h2 class="h2Nav">Créer un compte</h2></a></li>';
                 }
                 ?>
-
-                ?>
     		</ul>
   		</nav>
 	</header>

@@ -6,7 +6,7 @@
 	<link rel="icon" href="./models/img/pipe-icon.png" />
 	<title>La pipe magique</title>
     <link rel="icon" href="../models/img/pipe-icon.png" />
-	<link rel="stylesheet" href="Header.css">
+	<link rel="stylesheet" href="../views/Header.css">
 	<!-- <script src="script.js"></script> -->
 </head>
 <?php

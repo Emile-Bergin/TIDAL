@@ -23,6 +23,35 @@ class DataBase{
         return $resultat;
     }
 
+    public function getNextId($table){
+        $sth = $this->_db->query('SELECT max(id)+1 from '.$table);
+        $resultat = $sth->fetch();
+        // $sth->debugDumpParams();
+        return $resultat[0];
+    }
+
+
+    public function createUser($firstname, $familyname, $address, $username, $password){
+        if($this->checkUsernameExist($username)){
+            return false;
+        }else{
+            $password= password_hash($password, PASSWORD_DEFAULT);
+            $id=$this->getNextId("User");
+            $data = [
+                'id' => $id,
+                'firstname' => $firstname,
+                'familyname' => $familyname,
+                'address' => $address,
+                'username' => $username,
+                'password' => $password
+            ];
+            $sql = "INSERT INTO User VALUES (:id, :firstname, :familyname, :address, :username, :password)";
+            $stmt= $this->_db->prepare($sql);
+            $stmt->execute($data);
+        }
+    }
+
+
     public function checkConnexion($username,$password){
         //{$username,$password}==> TRUE/FALSE
         if($this->checkUsernameExist($username)){
@@ -36,7 +65,6 @@ class DataBase{
         $query='SELECT username from Customers where username="'. $username.'"';
         $sth = $this->_db->query($query);
         $resultat = $sth->fetch();
-        return $resultat["username"];
         if (strcasecmp($resultat["username"],$username)==0) {
             return true;
         }else {

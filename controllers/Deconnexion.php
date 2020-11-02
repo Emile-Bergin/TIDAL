@@ -6,6 +6,6 @@ require_once('../models/RessourceController.php');
 $_SESSION["connecte"]=DISCONNECT;
 session_unset();
 session_destroy();
-header("Location: ../controleur/Home.controleur.php");
+header("Location: ../controllers/Basket.php");
  ?>
 

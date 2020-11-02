@@ -13,6 +13,7 @@ if($_SESSION["connecte"]==CONNECT){
     $_SESSION["username"]=$_POST["username"];
 }
 
+var_dump($_SESSION);
 //Vue
-//require_once("../controleur/Home.controleur.php");
+require_once("../controllers/Basket.php");
  ?>

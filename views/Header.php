@@ -8,6 +8,9 @@
 	<!-- <link rel="stylesheet" href="style.css"> -->
 	<!-- <script src="script.js"></script> -->
 </head>
+<?php
+var_dump($_SESSION);
+?>
 <body>
 	<header>
 		<div class="HeaderHaut" style="display:flex;justify-content: space-between;">

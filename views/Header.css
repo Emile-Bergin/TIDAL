@@ -6,20 +6,26 @@
 #formConnexion{
     margin-top:30px;
 }
-
-.btnMenuNav:hover{
-    width: auto;
-    height: auto;
-    color: grey;
-    background-color: #3a3b3c;
+h1{
+}
+h2{
+	text-align:center;
+	width:100%;
+	height:100%;
 }
 
-.btnMenuNav{
-    text-decoration: none;
+a{
+	text-decoration: none;
+	width:100%;
+	height:100%;
+}
+
+a:hover{
+	color:#00FF00;
 }
 
 nav,ul{
-    background-color: #18191a;
+    
     list-style-type: none;
     display: flex;
     flex: auto;
@@ -27,14 +33,18 @@ nav,ul{
     margin: 0px;
     padding: 0px;
 }
+
 li{
     width: 100%;
     height: 100%;
     justify-content: center;
+	
 }
+
 li:hover{
     background-color: #3a3b3c;
 }
+
 
 hr{
     color: #3a3b3c;

@@ -42,7 +42,7 @@ var_dump($_SESSION);
 		<nav>
 			<ul style="display:flex;justify-content: space-around;">
       			<li>
-					<a class="btnMenuNav" href="../controllers/Products.php">Produits</a>
+					<a class="btnMenuNav" href="../controllers/Products.php"><h2>Produits</h2></a>
 				</li>
 		<?php
 		 if(isset($_SESSION)) {
@@ -52,7 +52,7 @@ var_dump($_SESSION);
 				}
 			}else{
 				echo'<li>	
-					<a class="btnMenuNav" href="../controllers/AccountCreation.php">Créer un compte</a>
+					<a class="btnMenuNav" href="../controllers/AccountCreation.php"><h2>Créer un compte</h2></a>
 			    </li>';
 			}
 		}

@@ -16,12 +16,19 @@ if($_SESSION["connecte"]==CONNECT){
 if(isset($_SESSION["tmpBasket"])){
     if($_SESSION["tmpBasket"]!=null){
         var_dump($_SESSION["tmpBasket"]);
+        $json=$_SESSION["tmpBasket"];
+        echo '<br>';
+        var_dump($json);
+        echo '<br>';
         $json=json_decode($_SESSION["tmpBasket"]);
+        echo '<br>';
+        var_dump($json);
+        echo '<br>';
     }
 }
 
 
 var_dump($_SESSION);
 //Vue
-//require_once("../controllers/Basket.php");
+require_once("../controllers/Basket.php");
  ?>

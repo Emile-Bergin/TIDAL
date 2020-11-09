@@ -13,6 +13,13 @@ if($_SESSION["connecte"]==CONNECT){
     $_SESSION["username"]=$_POST["username"];
 }
 
+if(isset($_SESSION["tmpBasket"])){
+    if($_SESSION["tmpBasket"]!=null){
+        var_dump($_SESSION["tmpBasket"]!=null);
+    }
+}
+
+
 var_dump($_SESSION);
 //Vue
 require_once("../controllers/Basket.php");

@@ -93,26 +93,34 @@ class DataBase{
     }
 
     public function getHashPassword($username){
-        $sth = $this->_db->query('SELECT password from Customers where username="'. $username.'"');
+        $sth = $this->_db->query('SELECT password from Customers where username="'.$username.'"');
         $resultat = $sth->fetch();
         // $sth->debugDumpParams();
         return $resultat["password"];
     }
 
     public function getCustomerID($username){
-        $query='SELECT id from Customers where username = "'. $username.'"';
+        $query='SELECT id from Customers where username = "'.$username.'"';
         $sth = $this->_db->query($query);
         $result= $sth->fetch();
         return $result["id"];
     }
 
     public function getBasket($id){
-        $query='SELECT * from Basket where customer="'. $id.'"';
+        $query='SELECT * from Basket where customer="'.$id.'"';
         $sth = $this->_db->query($query);
         $result= $sth->fetchAll();
         return $result;
     }
 
+    public function getProductById($id){
+        $query= 'SELECT * FROM Products WHERE id=?';
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
 
 }
 

@@ -16,7 +16,16 @@ class DataBase{
     public function setDb(PDO $db){
         $this->_db = $db;
     }
-
+	
+	public function deleteBasket($id){
+		$data = [
+            'id' => $id
+        ];
+        $sql = "DELETE FROM Basket WHERE customer= :id";
+        $stmt= $this->_db->prepare($sql);
+        $stmt->execute($data);
+	}
+	
     public function AddToBasket($customer, $product, $quantity){
         $data = [
             'customer' => $customer,

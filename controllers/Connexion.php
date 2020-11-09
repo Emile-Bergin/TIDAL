@@ -20,10 +20,14 @@ if(isset($_SESSION["tmpBasket"])){
         echo '<br>';
         var_dump($json);
         echo '<br>';
-        $json=json_decode($_SESSION["tmpBasket"]);
+        $jsonDecode=json_decode($_SESSION["tmpBasket"]);
         echo '<br>';
-        var_dump($json);
+        var_dump($jsonDecode);
         echo '<br>';
+        $customerId=$pdo->getCustomerID($_SESSION["username"]);
+        foreach($jsonDecode as $elem){
+        	$pdo->AddToBasket($customerId, $elem->articleId, $elem->articleId);
+        }
     }
 }
 

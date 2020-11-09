@@ -11,9 +11,17 @@ if ($_SESSION["connecte"] == CONNECT) { //si il est connecté
     $pdo->AddToBasket($id, $_POST["articleId"], $_POST["number"]);
 }else{
     if (!isset($_SESSION["tmpBasket"])) {
-	    $_SESSION["tmpBasket"] = "{" . $_POST["articleId"] . "," . $_POST["number"] . "},";
+    	$list=array();
+    	$myObjtJson->articleId=$_POST["articleId"];
+    	$myObjtJson->number=$_POST["number"];
+    	array_push($list,$myObjtJson);
+	    $_SESSION["tmpBasket"] = json_encode($list);
     }else{
-    	$_SESSION["tmpBasket"] = $_SESSION["tmpBasket"]."{" . $_POST["articleId"] . "," . $_POST["number"] . "},";
+    	$list=json_decode($_SESSION["tmpBasket"]);
+    	$myObjtJson->articleId=$_POST["articleId"];
+    	$myObjtJson->number=$_POST["number"];
+    	array_push($list,$myObjtJson);
+	    $_SESSION["tmpBasket"] = json_encode($list);
     }
 }
 

@@ -114,12 +114,11 @@ class DataBase{
     }
 
     public function getProductById($id){
-        $query= 'SELECT * FROM Products WHERE id=?';
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("i", $id);
+        $sql="SELECT * FROM Products WHERE id=:id";
+        $stmt = $this->_db->prepare($sql);
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
         $stmt->execute();
-        $result = $stmt->get_result();
-        $result->fetch_assoc();
+        $result = $stmt->fetch();
         return $result;
     }
 

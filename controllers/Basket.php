@@ -3,7 +3,10 @@
 require_once('../models/RessourceController.php');
 
 //Actions
+<<<<<<< HEAD
 echo 'ceci est un premier test';
+=======
+>>>>>>> 1dfbfc0d755b3ed1802226e09710148df264b118
 if ($_SESSION["connecte"] == CONNECT) { //si il est connecté
 	var_dump($_SESSION["username"]);
     $id=$pdo->getCustomerID($_SESSION["username"]);
@@ -30,7 +33,10 @@ if ($_SESSION["connecte"] == CONNECT) { //si il est connecté
         echo $_SESSION["tmpBasket"];
     }
 }
+<<<<<<< HEAD
 echo 'ceci est le second test';
+=======
+>>>>>>> 1dfbfc0d755b3ed1802226e09710148df264b118
 
 //Vue
 require_once('../views/Header.php');

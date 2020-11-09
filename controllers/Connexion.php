@@ -1,7 +1,6 @@
 <?php
 //Model
 require_once('../models/RessourceController.php');
-echo "Connexion";
 
 //Actions
 //DEBUG
@@ -34,5 +33,5 @@ if(isset($_SESSION["tmpBasket"])){
 
 var_dump($_SESSION);
 //Vue
-require_once("../controllers/Basket.php");
+header("Location: ../controllers/Products.php");
  ?>

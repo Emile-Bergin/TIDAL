@@ -9,3 +9,7 @@
     - Mise en place de l'architecture après début sur le rôle central du controleur où le fait de donner un rôle a la view. Choix d'adopter le controleur comme élément central.
 
     -Création des pages php de la vue et des controlleurs associés. Codage de la partie html du header.
+
+3ème séance :
+
+    - Récupération des données du panier et création de sa vue
